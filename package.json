@@ -20,8 +20,11 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "is-url-http": "^2.3.5",
     "nodemon": "^2.0.22",
     "pg": "^8.10.0",
-    "sequelize": "^6.31.0"
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.31.0",
+    "sequelize-cli": "^6.6.0"
   }
 }
