@@ -4,6 +4,7 @@ const {
   createRandomShortCode,
   findLongUrl,
 } = require("../services/url-service");
+const isUrl = require("is-url-http");
 
 const route = Router();
 
@@ -17,7 +18,10 @@ const route = Router();
 route.post("/", async (req, res) => {
   const link = req.body.link;
   const code = req.body.code;
-  // TODO: validate link must exist
+
+  if (!isUrl(link)) {
+    return res.status(400).json({ error: "Invalid URL" });
+  }
 
   if (!code) {
     const url = await createRandomShortCode(link);

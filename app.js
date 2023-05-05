@@ -12,7 +12,7 @@ app.use(express.json());
 app.use("/api/links", linksRoute);
 app.use("/", redirRoute);
 
-db.sync({ force: true }) // never force:true in prod, it drops dbs
+db.sync() // never force:true in prod, it drops dbs
   .then(() => console.log("db works"))
   .catch((err) => console.error(err));
 
